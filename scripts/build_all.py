@@ -44,6 +44,7 @@ HEROES = [
     ("button-overview-green.png","team",      "overview", "Overview"),
     ("button-overview-amber.png","guidebook", "overview", "Overview"),
     ("button-overview-archives.png","archives", "overview", "Overview"),
+    ("button-production-overview.png","production", "overview", "Overview"),
 ]
 
 # ===========================================================
@@ -83,6 +84,9 @@ SECTION = [
     ("badge-what-youll-find.png",       PAL["teal"],    "overview",     "What You'll Find"),
     ("badge-why-this-exists.png",       PAL["amber"],   "decisions",    "Why This Exists"),
     ("badge-founder-office.png",        PAL["slate"],   "founder",      "Founder Office"),
+    # OPERATE page badges
+    ("badge-sops-and-workflows.png",    PAL["indigo"],  "sop",          "SOPs & Workflows"),
+    ("badge-recurring-ops.png",         PAL["emerald"], "recurring",    "Recurring Ops"),
     ("button-exec-priorities.png",      PAL["pink"],    "strategic",    "Priorities"),
     ("button-exec-projects.png",        PAL["blue"],    "projects",     "Projects"),
     ("sec-exec-okrs.png",               PAL["violet"],  "okrs",         "OKRs"),
