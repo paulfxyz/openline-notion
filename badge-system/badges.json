@@ -170,6 +170,20 @@
       "page": "Production / Code, API & MCP"
     },
     {
+      "slug": "badge-discount-codes",
+      "label": "Discount Codes",
+      "color": "raspberry",
+      "icon": "tag",
+      "page": "Production / Discount Codes"
+    },
+    {
+      "slug": "badge-discount-usage",
+      "label": "Usage & Performance",
+      "color": "coral",
+      "icon": "chart",
+      "page": "Production / Discount Codes"
+    },
+    {
       "slug": "badge-prod-access",
       "label": "Access & Credentials",
       "color": "maroon",
