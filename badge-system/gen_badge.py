@@ -358,19 +358,37 @@ ICONS = {
     "handshake": _handshake, "play": _play, "list": _list, "compass": _compass,
 }
 
-def build_badge(label, slug, color="navy", icon="none", out_dir=OUT_DIR):
+# ---------------------------------------------------------------------------
+# PRESETS — one visual family, three scales.
+#   badge  : 34px tall  — the tab/section pill (the v2 style Paul approved)
+#   mini   : 34px tall  — section-nav cards (same as badge; kept as an alias
+#                          so mini-* slugs render identically to badges)
+#   button : 52px tall  — wide overview banner buttons (bigger icon + text)
+# Every preset shares the SAME palette, icons, white Bold caps text, and the
+# SAME tiny-rounded-corner radius ratio, so the whole system stays consistent
+# and fully reproducible from this one generator.
+# ---------------------------------------------------------------------------
+PRESETS = {
+    "badge":  dict(h=34, font=12, pad_x=11, icon_box=12, icon_gap=6, tracking=0.4, radius=6, icon_lw=2.0),
+    "mini":   dict(h=34, font=12, pad_x=11, icon_box=12, icon_gap=6, tracking=0.4, radius=6, icon_lw=2.0),
+    "button": dict(h=52, font=17, pad_x=18, icon_box=20, icon_gap=11, tracking=0.6, radius=9, icon_lw=2.6),
+}
+
+def build_badge(label, slug, color="navy", icon="none", out_dir=OUT_DIR, preset="badge"):
     fill = PALETTE.get(color, color)
     rgb = hex2rgb(fill)
     text = label.upper()
 
-    h = H * S
-    pad_x = 11 * S
-    icon_box = 12 * S
-    icon_gap = 6 * S
-    tracking = 0.4 * S           # letter-spacing
-    radius = 6 * S            # gentle rounded-rectangle corners (was h/2 full pill)
+    P = PRESETS.get(preset, PRESETS["badge"])
+    H_local = P["h"]
+    h = H_local * S
+    pad_x = P["pad_x"] * S
+    icon_box = P["icon_box"] * S
+    icon_gap = P["icon_gap"] * S
+    tracking = P["tracking"] * S     # letter-spacing
+    radius = P["radius"] * S         # gentle rounded-rectangle corners (tiny, not full pill)
 
-    font_size = 12 * S
+    font_size = P["font"] * S
     font = ImageFont.truetype(FONT_PATH, font_size)
 
     # measure text width with tracking
@@ -397,7 +415,7 @@ def build_badge(label, slug, color="navy", icon="none", out_dir=OUT_DIR):
     cx = left
     if has_icon:
         iy0 = (h - icon_box) / 2
-        ICONS[icon](d, (cx, iy0, cx + icon_box, iy0 + icon_box), max(2, int(2.0 * S)), (255, 255, 255, 255))
+        ICONS[icon](d, (cx, iy0, cx + icon_box, iy0 + icon_box), max(2, int(P["icon_lw"] * S)), (255, 255, 255, 255))
         cx += icon_box + icon_gap
 
     # draw text with tracking, vertically centered
@@ -407,7 +425,7 @@ def build_badge(label, slug, color="navy", icon="none", out_dir=OUT_DIR):
         bb = td.textbbox((0, 0), ch, font=font)
         cx += (bb[2] - bb[0]) + tracking
 
-    final = img.resize((round(w / S), H), Image.LANCZOS)
+    final = img.resize((round(w / S), H_local), Image.LANCZOS)
     path = os.path.join(out_dir, slug + ".png")
     final.save(path)
     return path, final.size

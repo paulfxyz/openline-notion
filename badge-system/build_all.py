@@ -26,13 +26,20 @@ def main():
     with open(args.manifest) as f:
         data = json.load(f)
 
+    # badges list = the 34px pills; assets list = buttons/minis/sec (optional)
+    groups = [("badges", data.get("badges", []))]
+    if "assets" in data:
+        groups.append(("assets", data["assets"]))
+
     count = 0
-    for b in data["badges"]:
-        path, size = build_badge(b["label"], b["slug"], b.get("color", "navy"),
-                                 b.get("icon", "none"), out_dir=args.dir)
-        print(f"  {b['slug']:28s} {str(size):9s} [{b.get('color')}/{b.get('icon')}]  {b['label']}")
-        count += 1
-    print(f"\nDone: {count} badges -> {args.dir}")
+    for gname, items in groups:
+        for b in items:
+            path, size = build_badge(b["label"], b["slug"], b.get("color", "navy"),
+                                     b.get("icon", "none"), out_dir=args.dir,
+                                     preset=b.get("preset", "badge"))
+            print(f"  [{gname:6s}] {b['slug']:30s} {str(size):9s} [{b.get('color')}/{b.get('icon')}/{b.get('preset','badge')}]  {b['label']}")
+            count += 1
+    print(f"\nDone: {count} images -> {args.dir}")
 
 if __name__ == "__main__":
     main()
