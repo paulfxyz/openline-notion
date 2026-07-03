@@ -169,11 +169,193 @@ def _file(d, b, lw, col):
     for fy in (0.5,0.68,0.86):
         d.line([x0+(x1-x0)*0.2,y0+(y1-y0)*fy,x1-(x1-x0)*0.2,y0+(y1-y0)*fy], fill=col, width=max(1,int(lw*0.8)))
 
+def _chart(d, b, lw, col):
+    x0,y0,x1,y1=b
+    d.line([x0,y0,x0,y1,x1,y1], fill=col, width=lw, joint="curve")
+    bw=(x1-x0)/4.5
+    for i,hf in enumerate((0.35,0.6,0.85)):
+        bx=x0+(x1-x0)*0.18+i*bw*1.25
+        d.rectangle([bx,y1-(y1-y0)*hf,bx+bw,y1], fill=col)
+
+def _folder(d, b, lw, col):
+    x0,y0,x1,y1=b
+    d.polygon([(x0,y0+(y1-y0)*0.22),(x0+(x1-x0)*0.4,y0+(y1-y0)*0.22),
+               (x0+(x1-x0)*0.52,y0),(x1,y0),(x1,y1),(x0,y1)], outline=col, width=lw)
+
+def _users(d, b, lw, col):
+    x0,y0,x1,y1=b; w=x1-x0; h=y1-y0
+    d.ellipse([x0+w*0.05,y0,x0+w*0.45,y0+h*0.42], outline=col, width=lw)
+    d.arc([x0+w*0.0,y0+h*0.5,x0+w*0.5,y1+h*0.5], 180,360, fill=col, width=lw)
+    d.ellipse([x0+w*0.5,y0+h*0.08,x0+w*0.88,y0+h*0.46], outline=col, width=lw)
+    d.arc([x0+w*0.45,y0+h*0.55,x0+w*0.95,y1+h*0.5], 180,360, fill=col, width=lw)
+
+def _calendar(d, b, lw, col):
+    x0,y0,x1,y1=b
+    d.rectangle([x0,y0+(y1-y0)*0.16,x1,y1], outline=col, width=lw)
+    d.line([x0,y0+(y1-y0)*0.38,x1,y0+(y1-y0)*0.38], fill=col, width=lw)
+    d.line([x0+(x1-x0)*0.28,y0,x0+(x1-x0)*0.28,y0+(y1-y0)*0.28], fill=col, width=lw)
+    d.line([x0+(x1-x0)*0.72,y0,x0+(x1-x0)*0.72,y0+(y1-y0)*0.28], fill=col, width=lw)
+
+def _check(d, b, lw, col):
+    x0,y0,x1,y1=b
+    d.line([(x0+(x1-x0)*0.12,y0+(y1-y0)*0.55),(x0+(x1-x0)*0.4,y1),
+            (x1,y0+(y1-y0)*0.12)], fill=col, width=int(lw*1.3), joint="curve")
+
+def _check_circle(d, b, lw, col):
+    x0,y0,x1,y1=b
+    d.ellipse([x0,y0,x1,y1], outline=col, width=lw)
+    d.line([(x0+(x1-x0)*0.28,(y0+y1)/2+(y1-y0)*0.02),(x0+(x1-x0)*0.44,y0+(y1-y0)*0.68),
+            (x0+(x1-x0)*0.74,y0+(y1-y0)*0.32)], fill=col, width=lw, joint="curve")
+
+def _tag(d, b, lw, col):
+    x0,y0,x1,y1=b
+    d.polygon([(x0,y0),(x0+(x1-x0)*0.55,y0),(x1,(y0+y1)/2),(x0+(x1-x0)*0.55,y1),(x0,y1)], outline=col, width=lw)
+    d.ellipse([x0+(x1-x0)*0.14,(y0+y1)/2-(x1-x0)*0.09,x0+(x1-x0)*0.32,(y0+y1)/2+(x1-x0)*0.09], fill=col)
+
+def _shield(d, b, lw, col):
+    x0,y0,x1,y1=b; cx=(x0+x1)/2
+    d.polygon([(cx,y0),(x1,y0+(y1-y0)*0.22),(x1,y0+(y1-y0)*0.55),(cx,y1),
+               (x0,y0+(y1-y0)*0.55),(x0,y0+(y1-y0)*0.22)], outline=col, width=lw)
+
+def _star(d, b, lw, col):
+    x0,y0,x1,y1=b; cx=(x0+x1)/2; cy=(y0+y1)/2; R=min(x1-x0,y1-y0)/2
+    pts=[]
+    for i in range(10):
+        a=math.radians(-90+i*36); r=R if i%2==0 else R*0.42
+        pts.append((cx+math.cos(a)*r, cy+math.sin(a)*r))
+    d.polygon(pts, fill=col)
+
+def _clock(d, b, lw, col):
+    x0,y0,x1,y1=b; cx=(x0+x1)/2; cy=(y0+y1)/2
+    d.ellipse([x0,y0,x1,y1], outline=col, width=lw)
+    d.line([cx,cy,cx,y0+(y1-y0)*0.28], fill=col, width=lw)
+    d.line([cx,cy,x0+(x1-x0)*0.72,cy], fill=col, width=lw)
+
+def _link(d, b, lw, col):
+    x0,y0,x1,y1=b; cy=(y0+y1)/2
+    d.arc([x0,y0+(y1-y0)*0.18,x0+(x1-x0)*0.6,y1-(y1-y0)*0.18],90,270,fill=col,width=lw)
+    d.arc([x1-(x1-x0)*0.6,y0+(y1-y0)*0.18,x1,y1-(y1-y0)*0.18],270,90,fill=col,width=lw)
+    d.line([x0+(x1-x0)*0.32,cy,x1-(x1-x0)*0.32,cy], fill=col, width=lw)
+
+def _layers(d, b, lw, col):
+    x0,y0,x1,y1=b; cx=(x0+x1)/2; w=x1-x0
+    def dia(yc):
+        d.polygon([(cx,yc-(y1-y0)*0.13),(x1,yc),(cx,yc+(y1-y0)*0.13),(x0,yc)], outline=col, width=lw)
+    dia(y0+(y1-y0)*0.22); dia((y0+y1)/2); dia(y1-(y1-y0)*0.22)
+
+def _database(d, b, lw, col):
+    x0,y0,x1,y1=b
+    d.ellipse([x0,y0,x1,y0+(y1-y0)*0.28], outline=col, width=lw)
+    d.line([x0,y0+(y1-y0)*0.14,x0,y1-(y1-y0)*0.14], fill=col, width=lw)
+    d.line([x1,y0+(y1-y0)*0.14,x1,y1-(y1-y0)*0.14], fill=col, width=lw)
+    d.arc([x0,y1-(y1-y0)*0.28,x1,y1],0,180,fill=col,width=lw)
+    d.arc([x0,y0+(y1-y0)*0.22,x1,y0+(y1-y0)*0.5],0,180,fill=col,width=lw)
+
+def _server(d, b, lw, col):
+    x0,y0,x1,y1=b
+    for fy in (0.0,0.55):
+        d.rectangle([x0,y0+(y1-y0)*fy,x1,y0+(y1-y0)*(fy+0.4)], outline=col, width=lw)
+        d.ellipse([x0+(x1-x0)*0.72,y0+(y1-y0)*(fy+0.14),x0+(x1-x0)*0.82,y0+(y1-y0)*(fy+0.26)], fill=col)
+
+def _book(d, b, lw, col):
+    x0,y0,x1,y1=b; cx=(x0+x1)/2
+    d.line([cx,y0+(y1-y0)*0.1,cx,y1], fill=col, width=lw)
+    d.arc([x0,y0,cx,y1+(y1-y0)*0.3],270,360,fill=col,width=lw)
+    d.arc([cx,y0,x1,y1+(y1-y0)*0.3],180,270,fill=col,width=lw)
+    d.line([x0,y0+(y1-y0)*0.12,x0,y1], fill=col, width=lw)
+    d.line([x1,y0+(y1-y0)*0.12,x1,y1], fill=col, width=lw)
+
+def _flag(d, b, lw, col):
+    x0,y0,x1,y1=b
+    d.line([x0,y0,x0,y1], fill=col, width=lw)
+    d.polygon([(x0,y0),(x1,y0+(y1-y0)*0.14),(x0,y0+(y1-y0)*0.5)], outline=col, width=lw)
+
+def _bell(d, b, lw, col):
+    x0,y0,x1,y1=b; cx=(x0+x1)/2
+    d.arc([x0,y0,x1,y1+(y1-y0)*0.6],180,360,fill=col,width=lw)
+    d.line([x0,y1-(y1-y0)*0.28,x1,y1-(y1-y0)*0.28], fill=col, width=lw)
+    d.ellipse([cx-(x1-x0)*0.08,y1-(y1-y0)*0.16,cx+(x1-x0)*0.08,y1], fill=col)
+
+def _target(d, b, lw, col):
+    x0,y0,x1,y1=b; cx=(x0+x1)/2; cy=(y0+y1)/2
+    d.ellipse([x0,y0,x1,y1], outline=col, width=lw)
+    d.ellipse([x0+(x1-x0)*0.28,y0+(y1-y0)*0.28,x1-(x1-x0)*0.28,y1-(y1-y0)*0.28], outline=col, width=lw)
+    d.ellipse([cx-(x1-x0)*0.08,cy-(y1-y0)*0.08,cx+(x1-x0)*0.08,cy+(y1-y0)*0.08], fill=col)
+
+def _wrench(d, b, lw, col):
+    x0,y0,x1,y1=b
+    d.ellipse([x0,y0,x0+(x1-x0)*0.42,y0+(y1-y0)*0.42], outline=col, width=lw)
+    d.line([x0+(x1-x0)*0.34,y0+(y1-y0)*0.34,x1,y1], fill=col, width=int(lw*1.4))
+
+def _home(d, b, lw, col):
+    x0,y0,x1,y1=b; cx=(x0+x1)/2
+    d.polygon([(cx,y0),(x1,y0+(y1-y0)*0.45),(x0,y0+(y1-y0)*0.45)], outline=col, width=lw)
+    d.rectangle([x0+(x1-x0)*0.16,y0+(y1-y0)*0.45,x1-(x1-x0)*0.16,y1], outline=col, width=lw)
+
+def _cloud(d, b, lw, col):
+    x0,y0,x1,y1=b
+    d.arc([x0,y0+(y1-y0)*0.2,x0+(x1-x0)*0.55,y1],90,360,fill=col,width=lw)
+    d.arc([x0+(x1-x0)*0.35,y0,x1,y1-(y1-y0)*0.1],180,360,fill=col,width=lw)
+    d.line([x0+(x1-x0)*0.18,y1,x1-(x1-x0)*0.1,y1], fill=col, width=lw)
+
+def _trash(d, b, lw, col):
+    x0,y0,x1,y1=b
+    d.line([x0,y0+(y1-y0)*0.16,x1,y0+(y1-y0)*0.16], fill=col, width=lw)
+    d.rectangle([x0+(x1-x0)*0.14,y0+(y1-y0)*0.16,x1-(x1-x0)*0.14,y1], outline=col, width=lw)
+    d.rectangle([x0+(x1-x0)*0.36,y0,x1-(x1-x0)*0.36,y0+(y1-y0)*0.16], outline=col, width=lw)
+    for fx in (0.36,0.5,0.64):
+        d.line([x0+(x1-x0)*fx,y0+(y1-y0)*0.3,x0+(x1-x0)*fx,y1-(y1-y0)*0.12], fill=col, width=max(1,int(lw*0.8)))
+
+def _archive(d, b, lw, col):
+    x0,y0,x1,y1=b
+    d.rectangle([x0,y0,x1,y0+(y1-y0)*0.3], outline=col, width=lw)
+    d.rectangle([x0+(x1-x0)*0.06,y0+(y1-y0)*0.3,x1-(x1-x0)*0.06,y1], outline=col, width=lw)
+    d.line([x0+(x1-x0)*0.35,y0+(y1-y0)*0.55,x0+(x1-x0)*0.65,y0+(y1-y0)*0.55], fill=col, width=lw)
+
+def _refresh(d, b, lw, col):
+    x0,y0,x1,y1=b
+    d.arc([x0,y0,x1,y1],40,320,fill=col,width=lw)
+    d.polygon([(x1-(x1-x0)*0.1,y0),(x1,y0+(y1-y0)*0.28),(x1-(x1-x0)*0.32,y0+(y1-y0)*0.22)], fill=col)
+
+def _handshake(d, b, lw, col):
+    x0,y0,x1,y1=b; cy=(y0+y1)/2
+    d.line([x0,cy,x0+(x1-x0)*0.4,cy], fill=col, width=lw)
+    d.line([x1,cy,x1-(x1-x0)*0.4,cy], fill=col, width=lw)
+    d.polygon([(x0+(x1-x0)*0.35,cy-(y1-y0)*0.12),(x0+(x1-x0)*0.65,cy-(y1-y0)*0.12),
+               (x0+(x1-x0)*0.5,cy+(y1-y0)*0.18)], fill=col)
+
+def _play(d, b, lw, col):
+    x0,y0,x1,y1=b
+    d.ellipse([x0,y0,x1,y1], outline=col, width=lw)
+    d.polygon([(x0+(x1-x0)*0.4,y0+(y1-y0)*0.3),(x0+(x1-x0)*0.4,y1-(y1-y0)*0.3),
+               (x1-(x1-x0)*0.3,(y0+y1)/2)], fill=col)
+
+def _list(d, b, lw, col):
+    x0,y0,x1,y1=b
+    for fy in (0.12,0.5,0.88):
+        yy=y0+(y1-y0)*fy
+        d.ellipse([x0,yy-(y1-y0)*0.07,x0+(y1-y0)*0.14,yy+(y1-y0)*0.07], fill=col)
+        d.line([x0+(x1-x0)*0.28,yy,x1,yy], fill=col, width=lw)
+
+def _compass(d, b, lw, col):
+    x0,y0,x1,y1=b; cx=(x0+x1)/2; cy=(y0+y1)/2
+    d.ellipse([x0,y0,x1,y1], outline=col, width=lw)
+    d.polygon([(cx,cy),(x0+(x1-x0)*0.66,y0+(y1-y0)*0.34),(cx,cy)], outline=col, width=lw)
+    d.polygon([(cx,cy),(cx-(x1-x0)*0.06,cy-(y1-y0)*0.06),(x0+(x1-x0)*0.66,y0+(y1-y0)*0.34),(cx+(x1-x0)*0.06,cy+(y1-y0)*0.06)], fill=col)
+
 ICONS = {
     "eye": _eye, "bolt": _bolt, "gear": _gear, "bulb": _bulb, "dollar": _dollar,
     "search": _search, "mail": _mail, "globe": _globe, "building": _building,
     "rocket": _rocket, "code": _code, "plug": _plug, "puzzle": _puzzle,
     "swap": _swap, "file": _file,
+    # extended set
+    "chart": _chart, "folder": _folder, "users": _users, "calendar": _calendar,
+    "check": _check, "check_circle": _check_circle, "tag": _tag, "shield": _shield,
+    "star": _star, "clock": _clock, "link": _link, "layers": _layers,
+    "database": _database, "server": _server, "book": _book, "flag": _flag,
+    "bell": _bell, "target": _target, "wrench": _wrench, "home": _home,
+    "cloud": _cloud, "trash": _trash, "archive": _archive, "refresh": _refresh,
+    "handshake": _handshake, "play": _play, "list": _list, "compass": _compass,
 }
 
 def build_badge(label, slug, color="navy", icon="none", out_dir=OUT_DIR):
