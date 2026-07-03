@@ -407,7 +407,7 @@
       "label": "Quick Navigation Guide",
       "color": "gunmetal",
       "icon": "compass",
-      "preset": "button",
+      "preset": "button_fixed",
       "page": "buttons"
     },
     {
@@ -415,7 +415,7 @@
       "label": "Executive HQ",
       "color": "blue",
       "icon": "bolt",
-      "preset": "button",
+      "preset": "button_fixed",
       "page": "buttons"
     },
     {
@@ -423,7 +423,7 @@
       "label": "Team",
       "color": "emerald",
       "icon": "users",
-      "preset": "button",
+      "preset": "button_fixed",
       "page": "buttons"
     },
     {
@@ -431,7 +431,7 @@
       "label": "Plan",
       "color": "grape",
       "icon": "target",
-      "preset": "button",
+      "preset": "button_fixed",
       "page": "buttons"
     },
     {
@@ -439,7 +439,7 @@
       "label": "Develop",
       "color": "orange",
       "icon": "rocket",
-      "preset": "button",
+      "preset": "button_fixed",
       "page": "buttons"
     },
     {
@@ -447,7 +447,7 @@
       "label": "Operate",
       "color": "teal",
       "icon": "gear",
-      "preset": "button",
+      "preset": "button_fixed",
       "page": "buttons"
     },
     {
@@ -455,7 +455,7 @@
       "label": "Grow",
       "color": "red",
       "icon": "chart",
-      "preset": "button",
+      "preset": "button_fixed",
       "page": "buttons"
     },
     {
@@ -463,7 +463,7 @@
       "label": "Production",
       "color": "forest",
       "icon": "server",
-      "preset": "button",
+      "preset": "button_fixed",
       "page": "buttons"
     },
     {
@@ -471,7 +471,7 @@
       "label": "Guidebook",
       "color": "amber",
       "icon": "book",
-      "preset": "button",
+      "preset": "button_fixed",
       "page": "buttons"
     },
     {
@@ -479,7 +479,7 @@
       "label": "Archives",
       "color": "slate",
       "icon": "archive",
-      "preset": "button",
+      "preset": "button_fixed",
       "page": "buttons"
     },
     {

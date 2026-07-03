@@ -372,6 +372,12 @@ PRESETS = {
     "badge":  dict(h=34, font=12, pad_x=11, icon_box=12, icon_gap=6, tracking=0.4, radius=6, icon_lw=2.0),
     "mini":   dict(h=34, font=12, pad_x=11, icon_box=12, icon_gap=6, tracking=0.4, radius=6, icon_lw=2.0),
     "button": dict(h=52, font=17, pad_x=18, icon_box=20, icon_gap=11, tracking=0.6, radius=9, icon_lw=2.6),
+    # button_fixed : identical WIDTH and HEIGHT for every button, content centered,
+    #   empty space allowed on shorter labels. Used for the Openline OS main nav so
+    #   all buttons share one perfectly uniform HD box. fixed_w must fit the longest
+    #   label ("QUICK NAVIGATION GUIDE") comfortably.
+    "button_fixed": dict(h=56, font=17, pad_x=18, icon_box=20, icon_gap=11,
+                         tracking=0.6, radius=10, icon_lw=2.6, fixed_w=340, fixed_h=56),
 }
 
 def build_badge(label, slug, color="navy", icon="none", out_dir=OUT_DIR, preset="badge"):
@@ -406,13 +412,21 @@ def build_badge(label, slug, color="navy", icon="none", out_dir=OUT_DIR, preset=
     has_icon = icon in ICONS
     left = pad_x
     content_w = (icon_box + icon_gap if has_icon else 0) + tw
-    w = int(left * 2 + content_w)
+
+    fixed_w = P.get("fixed_w")
+    if fixed_w:
+        # Fixed canvas: identical width for every button; center the icon+text block.
+        w = int(fixed_w * S)
+        start_x = (w - content_w) / 2      # left edge of the centered content block
+    else:
+        w = int(left * 2 + content_w)
+        start_x = left
 
     img = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
     d.rounded_rectangle([0, 0, w - 1, h - 1], radius=radius, fill=rgb + (255,))
 
-    cx = left
+    cx = start_x
     if has_icon:
         iy0 = (h - icon_box) / 2
         ICONS[icon](d, (cx, iy0, cx + icon_box, iy0 + icon_box), max(2, int(P["icon_lw"] * S)), (255, 255, 255, 255))
