@@ -519,7 +519,7 @@
     {
       "slug": "button-overview-executive",
       "label": "Overview",
-      "color": "blue",
+      "color": "cobalt",
       "icon": "compass",
       "preset": "button",
       "page": "buttons"
@@ -606,7 +606,7 @@
     },
     {
       "slug": "button-production-toc",
-      "label": "Table of Content",
+      "label": "Table of Contents",
       "color": "forest",
       "icon": "list",
       "preset": "button",
