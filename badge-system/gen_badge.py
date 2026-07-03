@@ -43,6 +43,32 @@ PALETTE = {
     "orange":  "#C2410C",
     "blue":    "#1D4ED8",
     "pink":    "#BE185D",
+    # --- extended palette (deep, saturated, white-text safe) ---
+    "red":       "#B91C1C",  # red-700
+    "crimson":   "#9F1239",  # rose-800
+    "maroon":    "#7F1D1D",  # red-900
+    "amber":     "#B45309",  # amber-700
+    "bronze":    "#92400E",  # amber-800
+    "olive":     "#4D7C0F",  # lime-700
+    "green":     "#15803D",  # green-700
+    "forest":    "#166534",  # green-800
+    "jade":      "#059669",  # emerald-600
+    "turquoise": "#0D9488",  # teal-600
+    "sky":       "#0369A1",  # sky-700
+    "azure":     "#0284C7",  # sky-600
+    "cobalt":    "#1E40AF",  # blue-800
+    "indigo":    "#4338CA",  # indigo-700
+    "iris":      "#4F46E5",  # indigo-600
+    "grape":     "#7E22CE",  # purple-700
+    "plum":      "#6B21A8",  # purple-800
+    "magenta":   "#A21CAF",  # fuchsia-700
+    "fuchsia":   "#C026D3",  # fuchsia-600
+    "raspberry": "#BE123C",  # rose-700
+    "coral":     "#EA580C",  # orange-600
+    "rust":      "#9A3412",  # orange-800
+    "charcoal":  "#1F2937",  # gray-800
+    "steel":     "#475569",  # slate-600
+    "gunmetal":  "#0F172A",  # slate-900
 }
 
 def hex2rgb(h):
@@ -160,7 +186,7 @@ def build_badge(label, slug, color="navy", icon="none", out_dir=OUT_DIR):
     icon_box = 12 * S
     icon_gap = 6 * S
     tracking = 0.4 * S           # letter-spacing
-    radius = h / 2
+    radius = 6 * S            # gentle rounded-rectangle corners (was h/2 full pill)
 
     font_size = 12 * S
     font = ImageFont.truetype(FONT_PATH, font_size)

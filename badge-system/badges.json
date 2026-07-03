@@ -1,30 +1,30 @@
 {
-  "_doc": "Single source of truth for all Openline OS os-nav badges. Edit here, then run build_all.py to regenerate every PNG. Colors: navy, gold, purple, emerald, cyan, violet, slate, rose, teal, orange, blue, pink (or any #hex). Icons: eye, bolt, gear, bulb, dollar, search, mail, globe, building, rocket, code, plug, puzzle, swap, file, none.",
+  "_doc": "Single source of truth for all Openline OS os-nav badges. Edit here, then run build_all.py to regenerate every PNG. Colors: navy, gold, purple, emerald, cyan, violet, slate, rose, teal, orange, blue, pink, red, crimson, maroon, amber, bronze, olive, green, forest, jade, turquoise, sky, azure, cobalt, indigo, iris, grape, plum, magenta, fuchsia, raspberry, coral, rust, charcoal, steel, gunmetal (or any #hex). Icons: eye, bolt, gear, bulb, dollar, search, mail, globe, building, rocket, code, plug, puzzle, swap, file, none. Color strategy: each functional group uses a related color FAMILY, with a distinct shade per badge so every badge is unique while the group still reads as a set.",
   "badges": [
     { "slug": "badge-read-last-activity", "label": "Read & Last Activity", "color": "navy",   "icon": "eye",   "page": "Executive / Read Function" },
-    { "slug": "badge-quick-actions",      "label": "Quick Actions",        "color": "violet", "icon": "bolt",  "page": "Executive / Read Function" },
+    { "slug": "badge-quick-actions",      "label": "Quick Actions",        "color": "iris",   "icon": "bolt",  "page": "Executive / Read Function" },
 
     { "slug": "badge-pricing-management", "label": "Pricing Management",   "color": "gold",   "icon": "dollar", "page": "Production / Pricing Intelligence" },
-    { "slug": "badge-scraper-intel",      "label": "Scraper Intelligence", "color": "gold",   "icon": "search", "page": "Production / Pricing Intelligence" },
+    { "slug": "badge-scraper-intel",      "label": "Scraper Intelligence", "color": "bronze", "icon": "search", "page": "Production / Pricing Intelligence" },
 
     { "slug": "badge-newsletters",        "label": "Newsletters",          "color": "cyan",   "icon": "mail",   "page": "Production / Email Management" },
-    { "slug": "badge-omdm",               "label": "OMDM",                 "color": "cyan",   "icon": "mail",   "page": "Production / Email Management" },
-    { "slug": "badge-openline-plus",      "label": "Openline+",            "color": "cyan",   "icon": "mail",   "page": "Production / Email Management" },
-    { "slug": "badge-hospitality",        "label": "Hospitality",          "color": "cyan",   "icon": "building","page": "Production / Email Management" },
-    { "slug": "badge-corporate",          "label": "Corporate",            "color": "cyan",   "icon": "building","page": "Production / Email Management" },
+    { "slug": "badge-omdm",               "label": "OMDM",                 "color": "sky",    "icon": "mail",   "page": "Production / Email Management" },
+    { "slug": "badge-openline-plus",      "label": "Openline+",            "color": "azure",  "icon": "mail",   "page": "Production / Email Management" },
+    { "slug": "badge-hospitality",        "label": "Hospitality",          "color": "turquoise","icon": "building","page": "Production / Email Management" },
+    { "slug": "badge-corporate",          "label": "Corporate",            "color": "teal",   "icon": "building","page": "Production / Email Management" },
 
     { "slug": "badge-languages",          "label": "Languages",            "color": "blue",   "icon": "globe",  "page": "Production / Language & Localization" },
-    { "slug": "badge-localization-files", "label": "Localization Files",   "color": "blue",   "icon": "file",   "page": "Production / Language & Localization" },
+    { "slug": "badge-localization-files", "label": "Localization Files",   "color": "cobalt", "icon": "file",   "page": "Production / Language & Localization" },
 
     { "slug": "badge-suppliers",          "label": "Suppliers",            "color": "emerald","icon": "building","page": "Production / Suppliers Marketplace" },
-    { "slug": "badge-price-comparison",   "label": "Price Comparison",     "color": "emerald","icon": "swap",   "page": "Production / Suppliers Marketplace" },
-    { "slug": "badge-supplier-growth",    "label": "Supplier Growth",      "color": "emerald","icon": "rocket", "page": "Production / Suppliers Marketplace" },
+    { "slug": "badge-price-comparison",   "label": "Price Comparison",     "color": "green",  "icon": "swap",   "page": "Production / Suppliers Marketplace" },
+    { "slug": "badge-supplier-growth",    "label": "Supplier Growth",      "color": "olive",  "icon": "rocket", "page": "Production / Suppliers Marketplace" },
 
     { "slug": "badge-code-hosting",       "label": "Code Hosting",         "color": "slate",  "icon": "code",   "page": "Production / Code, API & MCP" },
-    { "slug": "badge-api",                "label": "API",                  "color": "slate",  "icon": "plug",   "page": "Production / Code, API & MCP" },
-    { "slug": "badge-mcp",                "label": "MCP",                  "color": "slate",  "icon": "puzzle", "page": "Production / Code, API & MCP" },
+    { "slug": "badge-api",                "label": "API",                  "color": "steel",  "icon": "plug",   "page": "Production / Code, API & MCP" },
+    { "slug": "badge-mcp",                "label": "MCP",                  "color": "charcoal","icon": "puzzle", "page": "Production / Code, API & MCP" },
 
-    { "slug": "badge-how-it-works",       "label": "How It Works",         "color": "violet", "icon": "gear",   "page": "shared / any block" },
-    { "slug": "badge-why-this-exists",    "label": "Why This Exists",      "color": "gold",   "icon": "bulb",   "page": "shared / any block" }
+    { "slug": "badge-how-it-works",       "label": "How It Works",         "color": "grape",  "icon": "gear",   "page": "shared / any block" },
+    { "slug": "badge-why-this-exists",    "label": "Why This Exists",      "color": "amber",  "icon": "bulb",   "page": "shared / any block" }
   ]
 }
