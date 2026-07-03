@@ -519,7 +519,7 @@
     {
       "slug": "button-overview-executive",
       "label": "Overview",
-      "color": "cobalt",
+      "color": "navy",
       "icon": "compass",
       "preset": "button",
       "page": "buttons"
