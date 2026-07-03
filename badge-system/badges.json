@@ -606,9 +606,9 @@
     },
     {
       "slug": "button-production-toc",
-      "label": "Table of Contents",
+      "label": "Overview",
       "color": "forest",
-      "icon": "list",
+      "icon": "compass",
       "preset": "button",
       "page": "buttons"
     },
