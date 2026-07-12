@@ -525,6 +525,41 @@
       "color": "olive",
       "icon": "globe",
       "page": "HR / Environmental & Social Responsibility"
+    },
+    {
+      "slug": "badge-hr-tab-virtual-office",
+      "label": "Virtual Office",
+      "color": "blue",
+      "icon": "building",
+      "page": "HR / tab: Virtual Office"
+    },
+    {
+      "slug": "badge-hr-tab-wireguard",
+      "label": "VPN / WireGuard",
+      "color": "indigo",
+      "icon": "plug",
+      "page": "HR / tab: VPN / WireGuard"
+    },
+    {
+      "slug": "badge-hr-tab-2fa",
+      "label": "Team 2FA",
+      "color": "gold",
+      "icon": "check_circle",
+      "page": "HR / tab: Team 2FA"
+    },
+    {
+      "slug": "badge-hr-tab-internal-apps",
+      "label": "Internal Apps",
+      "color": "grape",
+      "icon": "layers",
+      "page": "HR / tab: Internal Apps"
+    },
+    {
+      "slug": "badge-hr-tab-tools",
+      "label": "Tools & More",
+      "color": "orange",
+      "icon": "wrench",
+      "page": "HR / tab: Tools & More"
     }
   ],
   "assets": [
