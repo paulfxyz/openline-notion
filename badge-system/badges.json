@@ -497,6 +497,13 @@
       "color": "jade",
       "icon": "code",
       "page": "HR / Open Company ⟩ Open Source"
+    },
+    {
+      "slug": "badge-hr-ai-tokens",
+      "label": "AI & Tokens Reimbursement",
+      "color": "amber",
+      "icon": "bolt",
+      "page": "HR / Reimbursements of AI & Tokens"
     }
   ],
   "assets": [
