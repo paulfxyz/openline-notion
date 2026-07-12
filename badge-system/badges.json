@@ -560,6 +560,90 @@
       "color": "orange",
       "icon": "wrench",
       "page": "HR / tab: Tools & More"
+    },
+    {
+      "slug": "badge-tool-figma",
+      "label": "Figma",
+      "color": "fuchsia",
+      "icon": "star",
+      "page": "Tools & More"
+    },
+    {
+      "slug": "badge-tool-notion",
+      "label": "Notion",
+      "color": "charcoal",
+      "icon": "book",
+      "page": "Tools & More"
+    },
+    {
+      "slug": "badge-tool-github",
+      "label": "GitHub",
+      "color": "slate",
+      "icon": "code",
+      "page": "Tools & More"
+    },
+    {
+      "slug": "badge-tool-vercel",
+      "label": "Vercel",
+      "color": "navy",
+      "icon": "rocket",
+      "page": "Tools & More"
+    },
+    {
+      "slug": "badge-tool-cloudflare",
+      "label": "Cloudflare",
+      "color": "orange",
+      "icon": "cloud",
+      "page": "Tools & More"
+    },
+    {
+      "slug": "badge-tool-google",
+      "label": "Google Workspace",
+      "color": "azure",
+      "icon": "mail",
+      "page": "Tools & More"
+    },
+    {
+      "slug": "badge-app-chatbot",
+      "label": "Company Chatbot",
+      "color": "amber",
+      "icon": "bulb",
+      "page": "Internal Apps"
+    },
+    {
+      "slug": "badge-app-dashboards",
+      "label": "Dashboards",
+      "color": "emerald",
+      "icon": "chart",
+      "page": "Internal Apps"
+    },
+    {
+      "slug": "badge-app-storage",
+      "label": "File Storage",
+      "color": "cobalt",
+      "icon": "folder",
+      "page": "Internal Apps"
+    },
+    {
+      "slug": "badge-app-pomodoro",
+      "label": "Pomodoro",
+      "color": "coral",
+      "icon": "clock",
+      "page": "Internal Apps"
+    },
+    {
+      "slug": "badge-app-virtual-office",
+      "label": "Virtual Office",
+      "color": "blue",
+      "icon": "building",
+      "page": "Internal Apps"
+    },
+    {
+      "slug": "badge-app-gary",
+      "label": "Gary",
+      "color": "violet",
+      "icon": "refresh",
+      "page": "Internal Apps"
     }
   ],
   "assets": [
