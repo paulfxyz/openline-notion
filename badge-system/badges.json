@@ -504,6 +504,13 @@
       "color": "amber",
       "icon": "bolt",
       "page": "HR / Reimbursements of AI & Tokens"
+    },
+    {
+      "slug": "badge-hr-security",
+      "label": "Security & OpSec",
+      "color": "steel",
+      "icon": "shield",
+      "page": "HR / Security & OpSec"
     }
   ],
   "assets": [
