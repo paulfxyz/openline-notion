@@ -483,6 +483,20 @@
       "color": "forest",
       "icon": "compass",
       "page": "HR / Travel Reimbursement"
+    },
+    {
+      "slug": "badge-hr-syndicate",
+      "label": "Syndicate & Syndicalism",
+      "color": "crimson",
+      "icon": "handshake",
+      "page": "HR / Syndicate & Syndicalism"
+    },
+    {
+      "slug": "badge-hr-open-source",
+      "label": "Open Source",
+      "color": "jade",
+      "icon": "code",
+      "page": "HR / Open Company ⟩ Open Source"
     }
   ],
   "assets": [
