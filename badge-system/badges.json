@@ -651,6 +651,13 @@
       "color": "orange",
       "icon": "layers",
       "page": "Develop / Project Management"
+    },
+    {
+      "slug": "badge-venture-capital",
+      "label": "Venture Capital",
+      "color": "red",
+      "icon": "handshake",
+      "page": "Grow / Venture Capital"
     }
   ],
   "assets": [
