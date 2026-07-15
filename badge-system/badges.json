@@ -658,6 +658,86 @@
       "color": "red",
       "icon": "handshake",
       "page": "Grow / Venture Capital"
+    },
+    {
+      "slug": "staff-button-dashboard",
+      "label": "Dashboard",
+      "color": "iris",
+      "icon": "home",
+      "preset": "button",
+      "folder": "staff",
+      "export_scale": 2,
+      "page": "Team / Staff Dashboard"
+    },
+    {
+      "slug": "staff-badge-tasks",
+      "label": "Tasks",
+      "color": "blue",
+      "icon": "check",
+      "preset": "badge",
+      "folder": "staff",
+      "export_scale": 2,
+      "page": "Team / Staff Dashboard"
+    },
+    {
+      "slug": "staff-badge-recurring-ops",
+      "label": "Recurring Ops",
+      "color": "teal",
+      "icon": "refresh",
+      "preset": "badge",
+      "folder": "staff",
+      "export_scale": 2,
+      "page": "Team / Staff Dashboard"
+    },
+    {
+      "slug": "staff-badge-projects",
+      "label": "Projects",
+      "color": "indigo",
+      "icon": "folder",
+      "preset": "badge",
+      "folder": "staff",
+      "export_scale": 2,
+      "page": "Team / Staff Dashboard"
+    },
+    {
+      "slug": "staff-badge-objectives",
+      "label": "Objectives",
+      "color": "grape",
+      "icon": "target",
+      "preset": "badge",
+      "folder": "staff",
+      "export_scale": 2,
+      "page": "Team / Staff Dashboard"
+    },
+    {
+      "slug": "staff-badge-key-results",
+      "label": "Key Results",
+      "color": "turquoise",
+      "icon": "chart",
+      "preset": "badge",
+      "folder": "staff",
+      "export_scale": 2,
+      "page": "Team / Staff Dashboard"
+    },
+    {
+      "slug": "staff-badge-sops-and-workflows",
+      "label": "SOPs & Workflows",
+      "color": "cobalt",
+      "icon": "book",
+      "preset": "badge",
+      "folder": "staff",
+      "export_scale": 2,
+      "page": "Team / Staff Dashboard"
+    },
+    {
+      "slug": "staff-badge-staff-dashboards",
+      "label": "Staff Dashboards",
+      "color": "iris",
+      "icon": "users",
+      "preset": "badge",
+      "folder": "staff",
+      "export_scale": 2,
+      "page": "Team / Staff Dashboard"
     }
   ],
   "assets": [

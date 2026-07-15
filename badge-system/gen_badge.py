@@ -25,7 +25,7 @@ import sys, os, math
 from PIL import Image, ImageDraw, ImageFont
 
 FONT_PATH = "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"
-S = 3                      # supersample factor
+S = 6                      # supersample factor (high, for crisp HD downsampling)
 H = 34                     # final height in px
 OUT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -380,7 +380,9 @@ PRESETS = {
                          tracking=0.6, radius=10, icon_lw=2.6, fixed_w=340, fixed_h=56),
 }
 
-def build_badge(label, slug, color="navy", icon="none", out_dir=OUT_DIR, preset="badge"):
+def build_badge(label, slug, color="navy", icon="none", out_dir=OUT_DIR, preset="badge", export_scale=1):
+    # export_scale>1 saves the badge at higher pixel density (same visual
+    # proportions) so Notion renders it crisp on high-DPI screens.
     fill = PALETTE.get(color, color)
     rgb = hex2rgb(fill)
     text = label.upper()
@@ -439,7 +441,9 @@ def build_badge(label, slug, color="navy", icon="none", out_dir=OUT_DIR, preset=
         bb = td.textbbox((0, 0), ch, font=font)
         cx += (bb[2] - bb[0]) + tracking
 
-    final = img.resize((round(w / S), H_local), Image.LANCZOS)
+    out_w = round((w / S) * export_scale)
+    out_h = round(H_local * export_scale)
+    final = img.resize((out_w, out_h), Image.LANCZOS)
     path = os.path.join(out_dir, slug + ".png")
     final.save(path)
     return path, final.size
