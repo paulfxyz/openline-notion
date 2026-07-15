@@ -8,16 +8,17 @@ OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 
 os.makedirs(OUT, exist_ok=True)
 
 # Coherent cool "personal workspace" family: blue -> teal -> indigo -> purple.
+# Large uniform button_fixed style (340x56) to match the OS quick-navigation guide.
 STAFF = [
     # slug, label, color, icon, preset
-    ("staff-button-dashboard",        "Dashboard",          "iris",      "home",      "button"),
-    ("staff-badge-tasks",             "Tasks",              "blue",      "check",     "badge"),
-    ("staff-badge-recurring-ops",     "Recurring Ops",      "teal",      "refresh",   "badge"),
-    ("staff-badge-projects",          "Projects",           "indigo",    "folder",    "badge"),
-    ("staff-badge-objectives",        "Objectives",         "grape",     "target",    "badge"),
-    ("staff-badge-key-results",       "Key Results",        "turquoise", "chart",     "badge"),
-    ("staff-badge-sops-and-workflows","SOPs & Workflows",   "cobalt",    "book",      "badge"),
-    ("staff-badge-staff-dashboards",  "Staff Dashboards",   "iris",      "users",     "badge"),
+    ("staff-button-dashboard",        "Dashboard",          "iris",      "home",      "button_fixed"),
+    ("staff-badge-tasks",             "Tasks",              "blue",      "check",     "button_fixed"),
+    ("staff-badge-recurring-ops",     "Recurring Ops",      "teal",      "refresh",   "button_fixed"),
+    ("staff-badge-projects",          "Projects",           "indigo",    "folder",    "button_fixed"),
+    ("staff-badge-objectives",        "Objectives",         "grape",     "target",    "button_fixed"),
+    ("staff-badge-key-results",       "Key Results",        "turquoise", "chart",     "button_fixed"),
+    ("staff-badge-sops-and-workflows","SOPs & Workflows",   "cobalt",    "book",      "button_fixed"),
+    ("staff-badge-staff-dashboards",  "Staff Dashboards",   "iris",      "users",     "button_fixed"),
 ]
 
 results = []
