@@ -429,6 +429,13 @@
       "page": "HR / Salary Guidelines"
     },
     {
+      "slug": "badge-hr-freelance",
+      "label": "Freelance & Pay",
+      "color": "emerald",
+      "icon": "swap",
+      "page": "HR / Freelance & Full-Time Pay"
+    },
+    {
       "slug": "badge-hr-open-company",
       "label": "Open Company",
       "color": "sky",
