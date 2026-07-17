@@ -737,6 +737,15 @@
       "preset": "button_fixed",
       "folder": "staff",
       "page": "Team / Staff Dashboard"
+    },
+    {
+      "slug": "staff-badge-point-of-contact",
+      "label": "Point of Contact",
+      "color": "sky",
+      "icon": "handshake",
+      "preset": "button_fixed",
+      "folder": "staff",
+      "page": "Team / Staff Dashboard"
     }
   ],
   "assets": [

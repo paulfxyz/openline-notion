@@ -19,6 +19,7 @@ STAFF = [
     ("staff-badge-key-results",       "Key Results",        "turquoise", "chart",     "button_fixed"),
     ("staff-badge-sops-and-workflows","SOPs & Workflows",   "cobalt",    "book",      "button_fixed"),
     ("staff-badge-staff-dashboards",  "Staff Dashboards",   "iris",      "users",     "button_fixed"),
+    ("staff-badge-point-of-contact",  "Point of Contact",   "sky",       "handshake", "button_fixed"),
 ]
 
 results = []
