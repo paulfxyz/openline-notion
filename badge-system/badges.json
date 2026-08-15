@@ -233,6 +233,13 @@
       "page": "Production / Systems"
     },
     {
+      "slug": "badge-prod-full-workflow",
+      "label": "Full Workflow",
+      "color": "teal",
+      "icon": "list",
+      "page": "Production / Full Workflow"
+    },
+    {
       "slug": "badge-arch-browse",
       "label": "Browse",
       "color": "navy",
